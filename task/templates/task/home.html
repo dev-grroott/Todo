@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'task/main.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to home page!!</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, temporibus esse. Sit, vel aperiam molestiae impedit provident quae odit, itaque tenetur cum ipsa veritatis veniam voluptas enim temporibus praesentium iure?
+    </p>
+
+    <div>
+        <h3>User data</h3>
+        <h5>Name: {{ user_data.name }}</h5>
+        <h5>Email: {{ user_data.email }}</h5>
+    </div>
+    <br>
+
+    <div>
+        <h3>Task data</h3>
+        {% for record in task_data %}
+            <h5> Task name: {{ record.name }} </h5>
+            <h5> Task status: {{ record.status }} </h5>
+            <hr>
+        {% endfor %}
+    </div>    
+
+</body>
+</html>
